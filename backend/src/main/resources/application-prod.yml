@@ -1,0 +1,12 @@
+# Production: no demo data and API docs off unless explicitly enabled.
+springdoc:
+  api-docs:
+    enabled: ${API_DOCS_ENABLED:false}
+  swagger-ui:
+    enabled: ${API_DOCS_ENABLED:false}
+
+management:
+  endpoint:
+    health:
+      probes:
+        add-additional-paths: true

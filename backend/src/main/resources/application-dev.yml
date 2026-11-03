@@ -1,0 +1,15 @@
+# Local development: demo accounts are seeded and cookies work over plain http://localhost.
+spring:
+  flyway:
+    locations: classpath:db/migration,classpath:db/dev-seed
+
+homefix:
+  security:
+    refresh-token:
+      cookie-secure: ${COOKIE_SECURE:false}
+    cors:
+      allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+logging:
+  level:
+    com.homefix: DEBUG
