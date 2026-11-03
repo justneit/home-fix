@@ -1,0 +1,13 @@
+# Test profile. The datasource is supplied by Testcontainers (@ServiceConnection).
+homefix:
+  security:
+    jwt:
+      # Test-only signing key; never used outside the test suite.
+      secret: test-only-signing-key-0123456789abcdef0123456789abcdef
+    refresh-token:
+      cookie-secure: true
+    cors:
+      allowed-origins: http://localhost:5173
+    rate-limit:
+      auth-requests-per-minute: 1000
+      refresh-requests-per-minute: 1000
